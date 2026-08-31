@@ -4,10 +4,15 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: m165437
+      url-base: https://github.com/M165437
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
+    - name: nice-view-gem
+      remote: m165437
+      revision: v0.3.0
     - name: zmk
       remote: cormoran
       revision: v0.3-branch+dya
