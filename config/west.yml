@@ -6,9 +6,14 @@ manifest:
       url-base: https://github.com/cormoran
     - name: m165437
       url-base: https://github.com/M165437
+    - name: a741725193
+      url-base: https://github.com/a741725193
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
+      revision: main
+    - name: zmk-corne-dongle
+      remote: a741725193
       revision: main
     - name: nice-view-gem
       remote: m165437
