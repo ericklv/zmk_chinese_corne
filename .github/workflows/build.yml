@@ -6,7 +6,20 @@ on:
       - "keymap-drawer/**"
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      archive_name: ${{ steps.sanitize.outputs.archive_name }}
+    steps:
+      - id: sanitize
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          SAFE_REF=$(echo "$REF_NAME" | sed 's/[^a-zA-Z0-9._-]/-/g')
+          echo "archive_name=firmware-$SAFE_REF" >> "$GITHUB_OUTPUT"
+
   build:
+    needs: prepare
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
     with:
-      archive_name: firmware-${{ github.ref_name }}
+      archive_name: ${{ needs.prepare.outputs.archive_name }}
