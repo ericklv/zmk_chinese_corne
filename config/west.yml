@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: ericklv
+      url-base: https://github.com/ericklv
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
@@ -17,6 +19,9 @@ manifest:
       revision: main
     - name: zmk-module-ble-management
       remote: cormoran
+      revision: main
+    - name: nice-view-fork
+      remote: ericklv
       revision: main
     - name: zmk-module-battery-history
       remote: cormoran
