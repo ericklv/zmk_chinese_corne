@@ -1,0 +1,30 @@
+/*
+*
+* Copyright (c) 2024 The ZMK Contributors
+* SPDX-License-Identifier: MIT
+*
+*/
+
+// The shared dtsi provides the transform, physical layout and sensors the keymap needs. It also
+// keeps underglow and backlight compiled in, without them their keys would not reach the halves.
+#include "eyelash_corne.dtsi"
+#include <behaviors/battery_history_request.dtsi>
+#include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&kscan0 {
+    status = "disabled";
+};

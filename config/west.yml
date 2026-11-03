@@ -22,7 +22,7 @@ manifest:
       revision: main
     - name: nice-view-fork
       remote: ericklv
-      revision: main
+      revision: dongle-latest
     - name: zmk-module-battery-history
       remote: cormoran
       revision: main
